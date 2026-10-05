@@ -1,5 +1,19 @@
-flask==3.0.0
-flask-cors==4.0.0
-torch==2.1.0
-torchvision==0.16.0
-Pillow==10.1.0
+# ─────────────────────────────────────────────────────────
+# 关于版本号：原来这里钉的是 torch==2.1.0 / torchvision==0.16.0
+#
+# 那两个版本只有 cp38~cp311 的 wheel（2023年10月发布的），
+# 在 Python 3.12 以上都装不上，更别说 3.14。
+# 症状是 `pip install -r requirements.txt` 直接报
+# "Could not find a version that satisfies the requirement" ——
+# 看着像网络问题，其实是根本没有对应的预编译包。
+#
+# 改成范围之后，Python 3.10~3.14 都能装：
+#   torch 2.9 是第一个带 cp314 wheel 的版本
+# ─────────────────────────────────────────────────────────
+
+flask>=3.0
+flask-cors>=4.0
+torch>=2.9
+torchvision>=0.24
+Pillow>=10.0
+requests>=2.31
