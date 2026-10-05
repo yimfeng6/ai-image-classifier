@@ -5,3 +5,8 @@ venv/
 node_modules/
 dist/
 backend/uploads/
+
+# 报告和课程模板：含老师姓名、学校名；模板不是本人的东西 —— 不公开
+毕设报告_*.docx
+毕设报告_*.md
+人工智能技术与应用课程论文模版*.docx
